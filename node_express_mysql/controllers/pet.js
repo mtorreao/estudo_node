@@ -5,7 +5,7 @@ module.exports = (app) => {
 
         Pets.lista((err, lista) => {
             if (err) {
-                res.status(500).send()
+                res.status(500).json(err)
             } else {
                 res.status(200).json(lista)
             }
@@ -15,7 +15,7 @@ module.exports = (app) => {
         const body = req.body
         Pets.adicionar(body, (err, result) => {
             if (err) {
-                res.status(500).send()
+                res.status(500).json(err)
             } else {
                 res.status(200).json(result)
             }
