@@ -1,4 +1,5 @@
 const moment = require('moment')
+const axios = require('axios')
 const conexao = require('../infra/mysqlConnector')
 
 class Atendimento {
@@ -33,13 +34,17 @@ class Atendimento {
     findById(id, callback) {
         const sql = `SELECT * FROM Atendimentos WHERE id = ?`
 
-        conexao.query(sql, id, (err, result) => {
+        conexao.query(sql, id, async (err, result) => {
             console.log('Encontrando atendimento por id', id, err, result);
             if (err) {
                 console.log(err);
                 callback(err, null)
             } else if (result.length > 0) {
-                callback(null, result[0])
+                const atendimento = result[0]
+                const response = await axios.default.get(`http://localhost:3001/clientes/${atendimento.cliente}`)
+                atendimento.cliente = response.data
+
+                callback(null, atendimento)
             } else {
                 callback(null, null)
             }
