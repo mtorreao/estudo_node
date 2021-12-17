@@ -1,6 +1,7 @@
 const config = require('config')
 const Sequelize = require('sequelize')
 
+
 const instancia = new Sequelize(
     config.get('mysql.db-name'),
     config.get('mysql.user'),
