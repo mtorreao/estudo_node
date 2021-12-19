@@ -1,5 +1,5 @@
 {
-  "name": "curso-node-2",
+  "name": "01",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.18.0",
+    "nock": "^10.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }

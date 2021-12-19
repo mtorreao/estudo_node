@@ -1,5 +1,5 @@
 {
-  "name": "curso-node-2",
+  "name": "02-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.24.0"
-  }
+  "license": "ISC"
 }
