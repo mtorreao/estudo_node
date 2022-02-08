@@ -11,10 +11,17 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/06-cli/index.js",
-            "restart": true,
+            "program": "${workspaceFolder}/08-multi-db-postgres/src/tests/postgresStrategy.test.js",
+            "restart": false,
             "runtimeExecutable": "node",
-            "cwd": "${workspaceFolder}/06-cli"
+            "cwd": "${workspaceFolder}/08-multi-db-postgres"
+        },
+        {
+            "type": "pwa-node",
+            "request": "attach",
+            "name": "Attach",
+            "restart": true,
+            "processId": "${command:PickProcess}"
         }
     ]
 }
